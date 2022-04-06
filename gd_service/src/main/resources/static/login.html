@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<input type="button" onclick="btnClick()" value="get请求"><br>
+<input type="text" id="imgCode"> <br>
+<input type="button" onclick="btnClick2()" value="post请求">
+
+<script>
+
+    function btnClick2() {
+        $.ajax({
+            type:"POST",
+            url:"http://nntsix.work:8085/api/sys/login",
+            data:JSON.stringify({
+                userCode:"2018750336",
+                userPwd:"123456",
+                key:"123456",
+                imgCode:$('#imgCode').val()
+            }),
+            headers: {'Content-Type': 'application/json'},
+            // dataType:"json",
+            function (msg) {
+            $("#app").html(msg);
+        }});
+    }
+</script>
+
+</body>
+</html>

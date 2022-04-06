@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>接口测试页面</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+</head>
+<body>
+    <div>
+    <h1>文件下载测试</h1>
+    <form name="ftpDownload" method="post" action="/api/sys/ftp/down">
+      Ftp路径：<input type="text" name="ftpPath"><br/>
+      文件名称：<input type="text" name="fileName"><br/>
+      <input type="submit" name="文件下载" value="文件下载">
+    </form>
+    </div>
+    <div>
+      <HR>
+      <h1>Excell用户批量导入模板下载</h1>
+      <form name="excellUpload" method="get" action="/api/sys/test/excel/excelTempDown">
+          <input type="submit" value="用户批量添加导入模板下载"/><br/>
+      </form>
+    </div>
+    <div>
+      <HR>
+      <h1>Excel导出所有用户</h1>
+      <form name="excellUpload" method="get" action="/api/sys/test/excel/Export">
+          <input type="submit" value="导出用户"/><br/>
+      </form>
+    </div>
+    <div>
+    <HR>
+    <h1>Excell用户批量导入测试</h1>
+    <form name="excellUpload" method="post" action="/api/sys/test/excel/addSomeUser" enctype ="multipart/form-data">
+        token令牌：<input type="text" name="token"><br/>
+        <input type="file" name="file" accept="xls/xlsx" value="选择导入文件" /><br/>
+        <input type="submit" value="用户批量添加"/><br/>
+    </form>
+    </div>
+    <div>
+        <HR>
+        <h1>主题详情多文件导入测试</h1>
+        token令牌：<input id="token" type="text" name="token"><br/>
+        设计主题ID：<input id="id" type="text" name="id"><br/>
+        <input id="uploadFiles" type="file" name="files" multiple="multiple"/><br/>
+        <input id="uploadGdThemeDetail" type="button"  value="批量导入" /><br/>
+    </div>
+    <div>
+        <HR>
+        <h1>主题详情多文件下载测试</h1>
+        token令牌：<input id="token2" type="text" name="token"><br/>
+        设计主题ID：<input id="id2" type="text" name="id"><br/>
+        <input id="downloadGdThemeDetail" type="button"  value="详情下载" /><br/>
+    </div>
+</body>
+</html>
